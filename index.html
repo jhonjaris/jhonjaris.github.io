@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/core.css">
+    <link rel="stylesheet" href="assets/css/lib/fontawesome-free-5.14.0-web/css/all.min.css">
+    <script src="assets/js/lib/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Nueva Tarea</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="homeworkForm">
+                
+                        <label for="homeworkTitle">Título</label>
+                        <input type="text" name="homeworkTitle" id="homeworkTitle">
+                        
+                        <label for="homeworkSubject">Materia</label>
+                        <select name="homeworkSubject" id="homeworkSubject">
+                            <option value="">Seleccione</option>
+                        </select>
+                        
+                        <label for="deliverDate">Fecha y Hora de Entrega</label>
+                        <input type="date" name="deliverDate" id="deliverDate"><input type="time" name="deliverTime" id="deliverTime">
+                        
+                        <label for="deliverDate">Detalles</label>
+                        <textarea name="homeworkDetails" id="homeworkDetails" cols="30" rows="10"></textarea>
+        
+                        <label for="homeworkCondition">Condicion</label>
+                        <select name="homeworkCondition" id="homeworkCondition">
+                            <option value="0">Por Iniciar</option>
+                            <option value="1">Iniciada</option>
+                            <option value="2">Terminada</option>
+                            <option value="3">Entregada</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="modal-footer btn btn-block text-center" id="saveHomework" data-dismiss="modal">
+                    <span class="m-auto">Guardar</span> 
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <button class=" btn btn-dark col-md-2 m-4" id="addHomework" data-toggle="modal" data-target="#exampleModalCenter">
+                <h1><i class="fas fa-plus"></i></h1>
+                <h6>Nueva Tarea</h6>
+            </button>
+            <button class="btn btn-dark col-md-2 m-4" id="addSubject">
+                <h1><i class="fas fa-plus"></i></h1>
+                <h6>Nueva Materia</h6>
+            </button>
+        </div>
+        <ul class="nav nav-tabs">
+            <div class="nav-item" id="lefted-tab">
+                    <a class="nav-link active" id="all" href="#"><i class="fas fa-list"> </i> Todas </a>
+                    <a class="nav-link" href="#" id="0"> <i class="fas fa-edit"></i> Por Realizar</a>
+                    <a class="nav-link" href="#" id="4"> <i class="far fa-clock"></i> Atrasadas</a>
+                    <a class="nav-link" href="#" id="3"> <i class="fas fa-check-double"></i> Realizadas</a>
+            </div>
+
+            <li class="nav-item mr-0" id="righted-tab">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-book"></i> Materias
+                </a>
+                <a href="#" class="nav-link">
+                    <i class="fas fa-archive"></i> Archivo
+                </a>
+            </li>
+        </ul>
+          <!-- Button trigger modal -->
+
+        <div id="subjectFormDiv">
+            <form action="engine/core.php" id="homeworkForm" method="POST">
+                
+                <label for="subjectTitle">Nombre de la Materia</label>
+                <input type="text" name="subjectTitle" id="subjectTitle">
+
+                <button id="saveSubject">Guardar</button>
+            </form>
+        </div>
+
+        <div id="main" class="row"></div>
+    </div>
+    <script src="assets/js/core.js"></script>
+    <script src="assets/css/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
