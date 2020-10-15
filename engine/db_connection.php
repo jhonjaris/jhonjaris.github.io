@@ -3,9 +3,9 @@ include_once "Credentials.php";
 class Connection
 {
     // public $database = "database";
-    public $connection = true;
-    public $data = '';
-
+    private $connection = true;
+    private $data = '';
+    
     function __tostring()
     {
         return "Class for connecting and consulting to DataBase";
@@ -31,11 +31,13 @@ class Connection
         return  $this->data;
     }
 
-    function getObjectData($json = false){
+    function getObjectData($json = false)
+    {
         $source_data = $this->data;
         $array_of_objects = Array();
         
-        for($i = 0; $i<count($source_data); $i++){
+        for($i = 0; $i<count($source_data); $i++)
+        {
             $empty_object = new stdClass;
         
             foreach ($source_data[$i] as $index=>$info){
@@ -44,36 +46,30 @@ class Connection
 
             array_push($array_of_objects, $empty_object);
         }
-
         return ($json) ? json_encode($array_of_objects) : $array_of_objects;
     }
-    function executeQuery($sql)
+
+    function executeQuery($sql_query)
     {
-        if($sql != '')
+        if($sql_query != '')
         { 
-            $query = mysqli_query($this->getConnection(), $sql);
-            if($query != false && !is_bool($query))
+            $request = mysqli_query($this->getConnection(), $sql_query);
+            if($request != false && !is_bool($request))
             {
-                $d = [];
-                while($row = $query->fetch_assoc()){
-                $d[] = $row;
+                $fillable_array = [];
+                while($row = $request->fetch_assoc()){
+                    $fillable_array[] = $row;
                 }
-                
-                $this->setData($d);
-                // mysqli_close($this->getConnection());
-                
-                
+                $this->setData($fillable_array);
                 return true;
             }
-            else if(is_bool($query))
+            else if(is_bool($request))
             {
-                $this->setData($query);
-                // mysqli_close($this->getConnection());
-                return $query;
+                $this->setData($request);
+                return $request;
             }
             else
             {
-                // mysqli_close($this->getConnection());
                 $this->setData(false);
                 return false;
             }
@@ -97,44 +93,45 @@ class Connection
         $this->executeQuery("SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = '$db' AND TABLE_NAME = '$tableName'");
         return (!is_bool($this->getData())) ? $this->getData()[0]['AUTO_INCREMENT'] : var_dump($this->getData());
     }
-    function __construct($sql='')
+
+    function __construct($sql_query='')
     {
-        $mysql = mysqli_connect(HOST, USER, PASSWORD, DB_NAME, PORT); 
-        if($mysql->errno)
+        $mysql_connection = mysqli_connect(HOST, USER, PASSWORD, DB_NAME, PORT); 
+        if($mysql_connection->errno)
         {
-            $this->setConnection($mysql->err); 
+            $this->setConnection($mysql_connection->err); 
         }
         else
         {
-            $this->setConnection($mysql);
-
-            if($sql != '')
-            { 
-                $query = mysqli_query($mysql, $sql);
-                if($query != false && !is_bool($query))
-                {
-                    $d = [];
-
-                    while($row = $query->fetch_assoc())
-                    {
-                        $d[] = $row;
-                    }
-
-                    $this->setData($d);
-                }
-                else if(is_bool($query))
-                {
-                    $this->setData($query);
-                }
-                else
-                {
-                    $this->setData(false);
-                }
-            }
-            else
-            {
-                return $mysql;
-            }
+            $this->setConnection($mysql_connection);
+            $this->executeQuery($sql_query);
+            // if($sql_query != '')
+            // { 
+                // $request_query = mysqli_query($mysql_connection, $sql_query);
+                // if($request_query != false && !is_bool($request_query))
+                // {
+                    // $fillable_array = [];
+// 
+                    // while($row = $request_query->fetch_assoc())
+                    // {
+                        // $fillable_array[] = $row;
+                    // }
+// 
+                    // $this->setData($fillable_array);
+                // }
+                // else if(is_bool($request_query))
+                // {
+                    // $this->setData($request_query);
+                // }
+                // else
+                // {
+                    // $this->setData(false);
+                // }
+            // }
+            // else
+            // {
+                // return $mysql_connection;
+            // }
         
         }
     }

@@ -10,6 +10,7 @@ class Homework extends Connection{
     private $deliver_time;
     private $condition;
     private $details;
+    private $deleted_at = NULL;
 
     public function getTitle(){
         return $this->title;
@@ -28,6 +29,10 @@ class Homework extends Connection{
     }
     public function getId(){
         return $this->id;
+    }
+    public function getDeleted()
+    {
+        return $this->deleted_at;
     }
 
     public function setTitle($input){
@@ -48,6 +53,29 @@ class Homework extends Connection{
     public function setId($input){
         $this->id = $input;
     }
+    public function setDeleted($input)
+    {
+        $this->deleted_at = $input;
+    }
+
+    public function load($id = 0){
+        $h_id = ($id > 0) ? $id : $this->getId();
+        $request_query = "SELECT h.*, s.title as subject_title FROM homeworks h join subjects s on(h.subject_ = s.id) WHERE h.id = $h_id";
+        $this->executeQuery($request_query);
+
+        if($this->getConnection()->affected_rows > 0)
+        {
+            $this->setId($this->getObjectData()[0]->id);
+            $this->setTitle($this->getObjectData()[0]->title);
+            $this->setSubject($this->getObjectData()[0]->subject_);
+            $this->setDeliverTime($this->getObjectData()[0]->deliver_time);
+            $this->setCondition($this->getObjectData()[0]->condition_);
+            $this->setDetails($this->getObjectData()[0]->details);
+        }
+        else{
+            return false;
+        }
+    }
 
     
     public function save(){
@@ -61,21 +89,30 @@ class Homework extends Connection{
 
         return $query;
     }
-    public function update($action, $input=""){
+    public function update($action="", $input=""){
         $id = $this->getId();
-        switch($action){
-            case 'setDone':
-                $q = new Connection("UPDATE homeworks SET condition_ = 3 WHERE id = $id");
-                echo json_encode($q->getData());
-            break;
-            case 'setUndone':
-                $q = new Connection("UPDATE homeworks SET condition_ = 0 WHERE id = $id");
-                echo json_encode($q->getData());
-            break;
-            case 'delete':
-                $q = new Connection("DELETE FROM homeworks WHERE id = $id");
-                echo json_encode($q->getData());
-            break;
+        if($action != "")
+        {
+            switch($action)
+            {
+                case 'setDone':
+                    $q = new Connection("UPDATE homeworks SET condition_ = 3 WHERE id = $id");
+                    echo json_encode($q->getData());
+                break;
+                case 'setUndone':
+                    $q = new Connection("UPDATE homeworks SET condition_ = 0 WHERE id = $id");
+                    echo json_encode($q->getData());
+                break;
+                case 'delete':
+                    $q = new Connection("DELETE FROM homeworks WHERE id = $id");
+                    echo json_encode($q->getData());
+                break;
+            }
+        }else 
+        {
+        $update_query = "UPDATE homeworks SET title = '{$this->getTitle()}', subject_ = {$this->getSubject()}, deliver_time = '{$this->getDeliverTime()}', condition_ = {$this->getCondition()}, details =  '{$this->getDetails()}', deleted_at = '{$this->getDeleted()}' WHERE id= {$this->getId()}";
+            $this->executeQuery($update_query);
+            return $this->getConnection()->affected_rows;
         }
     }
     // public function delete(){}
@@ -105,7 +142,7 @@ class Subject extends Connection{
     public function update(){
         $id = $this->getId();
         $title = $this->getTitle();
-        $query = "UPDATE TABLE subjects SET title='$title' WHERE id=$id";
+        $query = "UPDATE subjects SET title='$title' WHERE id=$id";
         $connection = new Connection($query);
     }
     public function delete(){
@@ -116,4 +153,8 @@ class Subject extends Connection{
         return $connection->getData();
     }
 }
+// $homework = new Homework();
+// $homework->load(4);
+//  echo "<pre>";  print_r($homework->getConnection()); echo "</pre>";
+//  echo "<pre>";  print_r($homework); echo "</pre>";
 ?>

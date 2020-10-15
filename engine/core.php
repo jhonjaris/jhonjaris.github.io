@@ -32,7 +32,7 @@ if(isset($_POST) && !empty($_POST)){
         break;
 
         case 'saveHomework':
-            $homework = new Homework;
+            $homework = new Homework();
             $homework->setTitle($_POST['title']);
             $homework->setSubject($_POST['subject']);
             $homework->setDeliverTime($_POST['deliver_time']);
@@ -42,15 +42,29 @@ if(isset($_POST) && !empty($_POST)){
         break;
 
         case 'editHomework':
+            $homework = new Homework();
+            $homework->load($_POST['id']);
+            $homework->setTitle($_POST['title']);
+            $homework->setSubject($_POST['subject']);
+            $homework->setDeliverTime($_POST['deliver_time']);
+            $homework->setCondition($_POST['condition']);
+            $homework->setDetails($_POST['details']);
+
+            echo $homework->update();
         break;
 
         case 'deleteHomework':
+            $homework = new Homework();
+            $homework->load($_POST['id']);
+
+            $homework->delete();
         break;
         
         
     }
 }
-if(isset($_GET)){
+if(isset($_GET) & !empty($_GET)){
+    $run_query_boolean = true;
     switch(array_key_first($_GET)){
         case 'subjects':
             $query = "select * from subjects";
@@ -65,12 +79,26 @@ if(isset($_GET)){
         case 'condition':
             $c = $_GET['condition'];
             $query = "SELECT h.id, h.title, h.condition_, h.deliver_time, h.details, s.title as subject_ FROM homeworks h JOIN subjects s ON (s.id = h.subject_) WHERE h.condition_ = $c ORDER BY h.deliver_time";
-        break;   
+        break;
+        
+        case 'homework':
+            $homework_id = $_GET['homework'];
+            $database_connection->load($homework_id);
+            $run_query_boolean = false;
+        break;
     }
 
-    $database_connection->executeQuery($query);
-    echo json_encode($database_connection->getData());
     
+    ($run_query_boolean == true) ?   $database_connection->executeQuery($query) : false;
+    // echo json_encode($database_connection->getData());
+    echo $database_connection->getObjectData(true);
 }
+// $h = new Homework();
+// $h->load(15);
+// $h->setTitle("Casos de Reglamentos - prueba 1");
+//  echo "<pre>";  print_r($h->update()); echo "</pre>";
+//  echo "<pre>";  print_r($h); echo "</pre>";
 
+
+//  echo "<pre>";  print_r(foo); echo "</pre>";
 ?>

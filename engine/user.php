@@ -59,9 +59,23 @@ class User extends Connection
         $this->deleted_at = $input;
     }
 
-    public function load(){
-        $id = $this->getId();
-        $query = "SELECT * FROM users WHERE id = $id";
+    public function load($user_id = 0){
+        $id = ($user_id > 0) ? $user_id : $this->getId();
+
+        if($id > 0){
+
+            $query = "SELECT * FROM users WHERE id = $id";
+            $db_request = new Connection($query);
+            $user = $db_request->getObjectData()[0];
+            $this->setId($user->id);
+            $this->setName($user->user_name);
+            $this->setUsername($user->user_username);
+            $this->setCondition($user->user_condition);
+            $this->setDeleted($user->deleted_at);
+            $this->setUpdated($user->updated_at);
+        }else{
+            return false;
+        }
     }
 
     public function update(){
@@ -73,8 +87,8 @@ class User extends Connection
         $date = date('Y-m-d H:i:s');
         $query = "UPDATE TABLE users SET deleted_at = '$date' WHERE id = $id";
         
-        $c =  new Connection($query);
-        return $c->getData();
+        $db_request = new Connection($query);
+        return $db_request->getData();
 
     }
 
@@ -85,9 +99,23 @@ class User extends Connection
         $condition = $this->getCondition();
         
         $query = "INSERT INTO users(user_name, user_username, user_password, user_condition) values('$name', '$username', '$password', $condition)";
-        $c =  new Connection($query);
-        return $c->getData();
+        $db_request = new Connection($query);
+        return $db_request->getData();
+    }
+
+    public function edit(){
+        $id = $this->getId();
+        $name = $this->getName();
+        $username = $this->getUsername();
+        $condition = $this->getCondition();
+        $this->setUpdated(date('Y-m-d H:i:s'));
+
+        $update_query = "UPDATE users SET user_name = '$name', user_username = '$username', user_condition = $condition, updated_at = '{$this->getUpdated()}'  WHERE id = $id";
+        $db_request = new Connection($update_query);
+        return $db_request->getData();
     }
 }
-
+// $user = new User();
+// $user->load(1);
+//  echo "<pre>";  print_r($user); echo "</pre>";
 ?>
