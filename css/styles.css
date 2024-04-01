@@ -99,12 +99,16 @@ nav {
 }
 
 #navigation-bar>ul {
+    list-style:none;
+    justify-content: space-around;
+    display:flex;
     flex-grow: 100;
 }
 
 .navbar-brand {
-    font-family: 'Oregano';
+    font-family: 'QuickSand';
     color: var(--yellow);
+    text-decoration:none;
     /* color: #CEBACF; */
 }
 
