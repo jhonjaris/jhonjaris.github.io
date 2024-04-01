@@ -1,0 +1,137 @@
+/* colors */
+/* yellow: var(--yellow *)/
+/* blue: #03768F; */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500&display=swap');
+
+:root {
+    --yellow: #e0c200;
+    --darkBlue: #0f1a2e;
+    --white: #f5f5f5;
+}
+
+body {
+    background-color: var(--darkBlue);
+}
+
+section {
+    height: 100vh;
+    color: var(--white);
+    margin: auto auto 0 auto;
+    width: 100%;
+    padding: 5%;
+}
+
+.yellow-line {
+    color: var(--yellow);
+    height: 1px;
+    opacity: 1;
+    /* margin-bottom: 3rem; */
+    width: 95%;
+    margin: 3rem auto;
+}
+
+.active {
+    color: var(--yellow);
+    border-bottom: 2px solid var(--yellow);
+}
+
+.title {
+    font-family: 'Roboto Slab', sans-serif;
+    /* font-family: 'Courier New', 'Courier Prime', sans-serif; */
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--yellow);
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+/* +++++++++ */
+
+.title:before,
+.title:after {
+    background-color: var(--yellow);
+    content: "";
+    /* display: inline-block; */
+    height: 1px;
+    align-self: center;
+    /* position: relative; */
+    /* vertical-align: middle; */
+    width: 50%;
+}
+
+.title:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+.title:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/* +++++++++ */
+/* h2 {} */
+
+.title>span {
+    background: var(--darkBlue);
+    padding: 0 10px;
+}
+
+/* //////////////////////////////////////////////// */
+/* #navigation-bar { */
+/* background-color: transparent; */
+/* background-color: transparent; */
+
+/* } */
+nav {
+    /* background-color: cadetblue; */
+    font-family: 'Quicksand' , Helvetica, sans-serif;
+    background-color: transparent;
+    backdrop-filter: blur(75px);
+}
+
+#navigation-bar>ul {
+    flex-grow: 100;
+}
+
+.navbar-brand {
+    font-family: 'Oregano';
+    color: var(--yellow);
+    /* color: #CEBACF; */
+}
+
+.navbar-brand:hover {
+    color: var(--white);
+}
+
+.navbar-toggler {
+    color: var(--yellow);
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: var(--yellow);
+}
+
+.menu_icon {
+    width: 40px;
+}
+
+@media (max-width:576px) {
+    .title {
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: .3rem;
+    }
+}
