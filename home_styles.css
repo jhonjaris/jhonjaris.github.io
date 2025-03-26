@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #f6fdf7, #ffffff); /* Light, calming background gradient */
+    color: #062308; /* Readable dark green text */
+    line-height: 1.6;
+}
+
+/* Hero Section */
+header.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: linear-gradient(135deg, #0c4e14, #062308); /* Vibrant green gradient */
+    color: #edfcef;
+    clip-path: ellipse(150% 100% at 50% 0%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+header.hero h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+header.hero p {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    font-weight: 300;
+}
+header .cta-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: #ffbc42;
+    color: #062308;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+header .cta-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Section Styling */
+.section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white; /* Clear and professional background */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    animation: fadeIn 0.7s ease-out;
+}
+.bg-alt {
+    background: #f6fdf7; /* Subtle background to alternate visually */
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+h2 {
+    font-size: 2.5rem;
+    color: #0c4e14;
+    text-align: center;
+    border-bottom: 3px solid #ffbc42; /* Accent underline */
+    margin-bottom: 1.5rem;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid for skill items */
+    gap: 1.5rem;
+    justify-content: center;
+}
+.skill-item {
+    background: #0c4e14; /* Deep green for skill cards */
+    color: #edfcef; /* Bright text for contrast */
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.skill-item:hover {
+    transform: scale(1.05);
+    background: #062308; /* Slightly darker hover effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.feature-item {
+    background: #0c4e14;
+    color: #edfcef;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-item:hover {
+    transform: scale(1.05);
+    background: #062308;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.portfolio-item {
+    background: #ffbc42;
+    color: #062308;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: block;
+}
+.portfolio-item:hover {
+    transform: scale(1.05);
+    background: #f9c95f;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.testimonial-item {
+    background: white;
+    color: #0c4e14;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+form input, form textarea, form button {
+    padding: 1.2rem;
+    border: 1px solid #0c4e14;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+form input:focus, form textarea:focus {
+    border-color: #ffbc42;
+    box-shadow: 0 0 8px rgba(255, 188, 66, 0.5);
+}
+form button {
+    background: #0c4e14;
+    color: #edfcef;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+form button:hover {
+    background: #062308;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0c4e14;
+    color: #edfcef;
+    font-size: 1rem;
+}
