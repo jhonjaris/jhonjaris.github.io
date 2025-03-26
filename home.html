@@ -1,53 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to my portfolio! I am a web developer creating stunning, responsive websites and modern digital experiences.">
-    <meta name="keywords" content="Web Developer, Portfolio, HTML, CSS, JavaScript, Responsive Design, UI/UX">
-    <meta name="author" content="Your Name">
-    <meta name="robots" content="index, follow">
-
-    <title>Your Portfolio | Web Developer</title>
-    
-    <!-- Open Graph Tags for Social Sharing -->
-    <meta property="og:title" content="Your Portfolio | Web Developer">
-    <meta property="og:description" content="Explore my portfolio of creative and modern websites.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourportfolio.com">
-    <meta property="og:image" content="https://yourportfolio.com/preview.jpg">
-
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="home_styles.css">
-
-    <!-- Favicon -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Your Portfolio | Web Developer</title>
 </head>
 <body>
     <!-- Hero Section -->
-    <header class="hero">
+    <header class="hero animate-fadein" role="banner" aria-labelledby="hero-title">
         <div class="hero-content">
-            <h1>Welcome to My Portfolio</h1>
+            <h1 id="hero-title">Welcome to My Portfolio</h1>
             <p>Crafting digital experiences with creativity and precision.</p>
-            <a href="#about" class="cta-btn">Learn More</a>
+            <a href="#about" class="cta-btn" aria-label="Learn more about me">Learn More</a>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main role="main">
         <!-- About Section -->
-        <section id="about" class="section">
+        <section id="about" class="section animate-slideup" aria-labelledby="about-title">
             <div class="container">
-                <h2>About Me</h2>
-                <p>I am a web developer passionate about creating modern, user-friendly websites. My expertise lies in blending design and functionality to deliver exceptional results.</p>
+                <h2 id="about-title">About Me</h2>
+                <p>I am a web developer passionate about creating modern, user-friendly websites.</p>
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="section bg-alt">
+        <section id="skills" class="section bg-alt animate-slideup" aria-labelledby="skills-title">
             <div class="container">
-                <h2>Skills</h2>
+                <h2 id="skills-title">Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-item">HTML</div>
                     <div class="skill-item">CSS</div>
@@ -60,9 +44,9 @@
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="section">
+        <section id="features" class="section" aria-labelledby="features-title">
             <div class="container">
-                <h2>What I Offer</h2>
+                <h2 id="features-title">What I Offer</h2>
                 <div class="features-grid">
                     <div class="feature-item">
                         <h3>Responsive Design</h3>
@@ -81,17 +65,19 @@
         </section>
 
         <!-- Portfolio Section -->
-        <section id="portfolio" class="section bg-alt">
+        <section id="portfolio" class="section bg-alt animate-fadein" aria-labelledby="portfolio-title">
             <div class="container">
-                <h2>My Work</h2>
+                <h2 id="portfolio-title">My Work</h2>
                 <div class="portfolio-grid">
                     <div class="portfolio-item">
-                        <img src="https://plus.unsplash.com/premium_photo-1677464011871-c34f54e7e312?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Screenshot of Project 1">
+                        <img src="https://plus.unsplash.com/premium_photo-1677464011871-c34f54e7e312?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Screenshot of Project 1">
                         <h3>Project 1</h3>
                         <p>A sleek e-commerce platform designed for conversions.</p>
                     </div>
                     <div class="portfolio-item">
-                        <img src="https://plus.unsplash.com/premium_photo-1677464011871-c34f54e7e312?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Screenshot of Project 2">
+                        <img src="https://plus.unsplash.com/premium_photo-1677464011871-c34f54e7e312?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                             alt="Screenshot of Project 2">
                         <h3>Project 2</h3>
                         <p>A creative portfolio site showcasing unique designs.</p>
                     </div>
@@ -99,40 +85,26 @@
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="section">
-            <div class="container">
-                <h2>What Clients Say</h2>
-                <div class="testimonials-grid">
-                    <div class="testimonial-item">
-                        <p>"An absolute pleasure to work with! Delivered beyond expectations."</p>
-                        <h4>- Client Name</h4>
-                    </div>
-                    <div class="testimonial-item">
-                        <p>"Transformed our vision into a stunning website. Highly recommend!"</p>
-                        <h4>- Client Name</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
-        <section id="contact" class="section bg-alt">
+        <section id="contact" class="section animate-slideup" aria-labelledby="contact-title">
             <div class="container">
-                <h2>Get in Touch</h2>
-                <form action="https://yourportfolio.com/contact" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit">Send Message</button>
+                <h2 id="contact-title">Get in Touch</h2>
+                <form action="#" method="POST" aria-label="Contact Form">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" aria-label="Send your message">Send Message</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <p>© 2025 Your Name. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
