@@ -6,11 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Oregano&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #0f1a2e;
-    /* .diagonal-split-background{ */
-    /* background-color: #013A6B; */
-    /* } */
 }
 
 section {
@@ -38,11 +39,8 @@ section {
 .title:after {
     background-color: #e0c200;
     content: "";
-    /* display: inline-block; */
     height: 1px;
     align-self: center;
-    /* position: relative; */
-    /* vertical-align: middle; */
     width: 50%;
 }
 

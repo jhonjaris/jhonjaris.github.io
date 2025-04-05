@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/curriculum.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/curriculum.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <!-- <img src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24"> -->
-                <h1>ImJhon.org</h1>
+                <h1>ImJhon.dev</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-bar" aria-controls="navigation-bar" aria-expanded="false" aria-label="Toggle navigation">
                 <span ><img class="menu_icon" src="assets/icons/menu.svg" alt=""></span>
@@ -40,61 +40,83 @@
         <h3>Jhonjaris Soto</h3>
         <h5>Desarrollador de Software</h5>
     </section>
-    <section class="tech_container">
-        <div class="tech">
-            <div class="tech_icon">
-                <img src="assets//img/html.png" alt="" srcset="">
+    
+    <section id="skills">
+        <h3 class="title">Habilidades</h3>    
+        <div id="tech_container">
+            <div class="tech">
+                <div class="tech_icon">
+                    <img src="assets//img/html.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">HTML5</h3>
+                </div>
             </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">HTML5</h3>
+            <div class="tech">
+                <div class="tech_icon">
+                    <img src="assets//img/css.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">CSS3</h3>
+                </div>
             </div>
-        </div>
-        <div class="tech">
-            <div class="tech_icon">
-                <img src="assets//img/css.png" alt="" srcset="">
+            <div class="tech">
+                <div class="tech_icon">
+                    <img src="assets/img/js.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">JAVASCRIPT</h3>
+                </div>
             </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">CSS3</h3>
+            <div class="tech">
+                <div class="tech_icon">
+                    <img src="assets/img/php.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">PHP7</h3>
+                </div>
             </div>
-        </div>
-        <div class="tech">
-            <div class="tech_icon">
-                <img src="assets/img/js.png" alt="" srcset="">
+            <div class="tech">
+                <div class="tech_icon">
+                    <img src="assets/img/mysql.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">MySQL</h3>
+                </div>
             </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">JAVASCRIPT</h3>
+            <div class="tech">
+                <div class="tech_icon">
+                    <img src="assets/img/bootstrap.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">BOOTSTRAP 4/5</h3>
+                </div>
             </div>
-        </div>
-        <div class="tech">
-            <div class="tech_icon">
-                <img src="assets/img/php.png" alt="" srcset="">
+            <div class="tech">
+                <div class="tech_icon bg-light">
+                    <img src="assets/img/jquery.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">JQUERY</h3>
+                </div>
             </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">PHP7</h3>
+            
+            <div class="tech">
+                <div class="tech_icon bg-light">
+                    <img src="assets/img/800px-Laravel.svg.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">LARAVEL</h3>
+                </div>
             </div>
-        </div>
-        <div class="tech">
-            <div class="tech_icon">
-                <img src="assets/img/mysql.png" alt="" srcset="">
-            </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">MySQL</h3>
-            </div>
-        </div>
-        <div class="tech">
-            <div class="tech_icon">
-                <img src="assets/img/bootstrap.png" alt="" srcset="">
-            </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">BOOTSTRAP 4/5</h3>
-            </div>
-        </div>
-        <div class="tech">
-            <div class="tech_icon bg-light">
-                <img src="assets/img/jquery.png" alt="" srcset="">
-            </div>
-            <div class="tech_desc">    
-                <h3 class="tech_title">JQUERY</h3>
+
+            <div class="tech">
+                <div class="tech_icon bg-light">
+                    <img src="assets/img/git.png" alt="" srcset="">
+                </div>
+                <div class="tech_desc">    
+                    <h3 class="tech_title">GIT</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -108,49 +130,141 @@
                     <img src="assets/img/acdl.png" alt="logo de la academia de lenguas de santo domingo">
                 </span>
                 <h3>Inglés</h3>
-                <div class="bar"><div class="progress adv"></div></div>
+                <!-- <div class="bar"><div class="progress adv"></div></div> -->
             </div>
-            <div class="extra">
-                <span class="icon">
-                    <img src="assets/img/centu.png" alt="logo centu">
-                </span>
-                <h3>Adobe Ps / Ai / Xd</h3>
-                <div class="bar"> <div class="progress im"></div></div>
-            </div>
+            
             <div class="extra">
                 <span class="icon">
                     <img src="assets/img/vozzit.png" alt="Logo Vozzit">
                 </span>
                 <h3>Oratoria</h3>
-                <div class="bar"><div class="progress adv"></div></div>
+                <!-- <div class="bar"><div class="progress adv"></div></div> -->
+            </div>
+
+            <div class="extra">
+                <span class="icon">
+                    
+                    <img src="assets/img/ubuntu.png" alt="logo centu">
+                </span>
+                <h3>Linux (UBUNTU)</h3>
+                <!-- <div class="bar"> <div class="progress im"></div></div> -->
+            </div>
+
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-photoshop.png" alt="logo photoshop">
+                </span>
+                <h3>Adobe Photoshop</h3>
+                <!-- <div class="bar"> <div class="progress im"></div></div> -->
+            </div>
+
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-illustrator.png" alt="logo centu">
+                </span>
+                <h3>Adobe Illustrator</h3>
+                <!-- <div class="bar"> <div class="progress im"></div></div> -->
+            </div>
+
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-xd.png" alt="logo centu">
+                </span>
+                <h3>Adobe XD</h3>
+                <!-- <div class="bar"> <div class="progress im"></div></div> -->
+            </div>
+            
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/excel-logo-0.png" alt="logo centu">
+                </span>
+                <h3>Excel</h3>
+                <!-- <div class="bar"> <div class="progress im"></div></div> -->
             </div>
         </div>
+
     </section>
+
+
+
+    <section class="extras">
+        <h3 class="title">Educación</h3>
+        <div class="extras_container">
+
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/FreeCodeCamp_logo.svg.png" alt="" class="logo">
+                </span>
+                <h3>Desarrollo Web Responsive</h3>
+            </div>
+            
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/unibe-logo.png" alt="Unibe Logo" class="logo">
+                </span>
+                <h3>Ingeniería en Tecnología y Comunicaciones</h3>
+            </div>
+
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/itla-logo.webp" alt="ITLA " class="logo">
+                </span>
+                <h3>Desarrollo de Software</h3>
+                <!-- <div class="bar"> <div class="progress im"></div></div> -->
+            </div>
+
+        </div> 
+    <section>
 
     <section class="experiences">
         <h3 class="title"> Experiencia Laboral </h3>
         <div class="exp">
+            <h3>Skillfull Antics</h3>
+            <p>Web Developer</p>
+            <p>2022-ACTUALIDAD</p>
+            <!-- <p>+1 (809) 949-1770</p> -->
+        </div>
+        <div class="exp">
             <h3>BancaDom S.R.L.</h3>
+            <p>Soporte Técnico</p>
             <p>2019-2021</p>
             <!-- <p>+1 (809) 949-1770</p> -->
         </div>
         <div class="exp">
             <h3>MediaSoft S.R.L.</h3>
+            <p>Soporte Técnico</p>
             <p>2019-2021</p>
             <!-- <p>+1 (809) 946-4444</p> -->
         </div>
         <div class="exp">
             <h3>Edificio de Oficinas Gubernamentales Juan Pablo Duarte</h3>
+            <p>Supervisor de Servicios Generales</p>
             <p>2021-2022</p>
             <!-- <p>+1 (829) 848-1934</p> -->
         </div>
     </section>
-    <section>
+
         <div class="download_cv">
-            <a href="assets/files/curriculum_2022 copy.pdf" target="_blank"><button class="download_pdf">Descargar PDF</button></a>
-            <a href="assets/img/curriculum-software-developer-2022.jpg" target="_blank"><button class="download_img">Ver imagen</button></a>
+            <a href="assets/files/Curriculum Jhonjaris Soto - F.pdf (21.59 × 29.74 cm) (3).pdf" target="_blank"><button class="download_pdf">Descargar PDF</button></a>
+            <a href="assets/img/Copy of Curriculum Jhonjaris Soto - F.pdf (21.59 × 29.74 cm).png" target="_blank"><button class="download_pdf">Download (ENGLISH) </button></a>
+            <a href="assets/img/Curriculum Jhonjaris Soto - F.pdf (21.59 × 29.74 cm).png" target="_blank"><button class="download_img">Ver imagen</button></a>
         </div>
     </section>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
+
+<footer class="container-fluid d-flex justify-content-around align-content-center">
+    <div class="copyright d-flex text-center align-content-center h-100">
+       <p>© Jhonjaris Soto - 2020, Todos los derechos reservados.</p> 
+    </div>
+    <div class="d-flex justify-content-start align-content-center my-3 ">
+        <ul>
+            <li><b>Contacto</b></li>
+            <li><a href="./contact.html">Página Web</a></li>
+            <li><a href="tel:+16606754804">+1 660 675 4804</a></li>
+            <li><a href="mailto:imjhon.dev@gmail.com">imjhon.dev@gmail.com</a></li>
+        </ul>
+    </div>
+</footer>
+
 </html>

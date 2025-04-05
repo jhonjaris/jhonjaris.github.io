@@ -17,6 +17,7 @@ submit.addEventListener("click", function (e) {
 
     const http = new XMLHttpRequest("");
     const url = root + "/core/email.php";
+    
     http.open("POST", url);
     http.send(form);
     http.onreadystatechange = function() {

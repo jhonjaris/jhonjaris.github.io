@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap');
+/* primary tags */
+body{
+    margin-block-start: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-family: 'Lexend Peta', Helvetica, sans-serif;
+}
+/* header elements */
+.header{
+    text-align: center;
+    background-color: #90afda;
+    padding: 30px;
+    color:white;
+}
+#topless{
+    margin-block-start: 0px;
+}
+#bottomless{
+    margin-block-end: 0px;
+}
+
+/* menu elements */
+
+.menu{
+    width:100vw;
+    background-image: linear-gradient(#ebebeb, #cccccc);
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+    padding: 5px;
+}
+
+.btn:hover{
+    color:white;
+    cursor: pointer;
+    background-image:linear-gradient(#5bacc2,#3d8da4);
+}
+
+.btn:active{
+    background-image:linear-gradient(#3d8da4,#5bacc2);
+}
+
+.active{
+    background-color:#F0F7F9 !important;
+}
+/* box-container elements */
+.line{
+    justify-content: center;
+    display: flex;
+    width: 100vw;
+}
+
+#line3{
+    display: none;
+}
+
+.box-container{
+    background:#F0F7F9;
+    justify-content: space-around ;
+    display: block;
+    text-align: center;
+}
+.box{
+    width: 10rem;
+    height: 10rem;
+    background-color: #90afda;
+    margin: 10px;
+}
+.box:hover{
+    cursor: pointer;
+}
+
+
+
+
+@media(max-width: 580px){
+    .box{
+        width: 8rem;
+        height: 8rem;
+        margin: 8px;
+    }
+}

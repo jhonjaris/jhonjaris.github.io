@@ -10,9 +10,61 @@ h3.study-title {
 
 /* /////////////////////////////////////////////// */
 
+.project:nth-of-type(even)> img{
+    order: 1;
+    margin-left: 2.5rem;
+}
+.project:nth-of-type(even)> .info-section{
+    margin-left:0;
+
+}
+.project:nth-of-type(even)>.info-section> .project-title{
+    text-align: end;
+    
+}
+.project {
+    padding: 2.5rem;
+    background: #eee;
+    display: flex;
+    justify-content: start;
+    max-height: 500px;
+    margin-bottom:2rem;
+    border-bottom: 1px solid #192B4D;
+
+    
+}
+.project img {
+    
+    width:40%;
+    /* aspect-ratio: 3/2; */
+    object-fit: contain;
+    
+}
+.info-section { 
+    width:100%;
+    /* padding-right: 3.5rem; */
+    margin-left: 2rem;
+    color:#192B4D;
+}
+.info-section>* {
+    margin-bottom: 1.8rem;
+}
+.project-title {
+    width:100%;
+    font-size: 3rem;
+    font-weight: 600;
+    border-bottom: 2px solid #192B4D;
+    text-transform: uppercase;
+}
+.project-description {
+    font-size: 1.5rem;
+    text-align: justify;
+}
 .description {
+    
     width: 100%;
     justify-content: space-around;
+    /* background-image: url(../assets/img/background.jpg); */
     background-color: #192B4D;
     /* background-image: -webkit-linear-gradient(38deg, #0f1a2e 30%, transparent 30%), url("assets/img/cells_bg.png"); */
     /* background-image: -webkit-linear-gradient(30deg, #013A6B 50%, url("assets/img/poligon_background.png") 50%); */
@@ -21,7 +73,10 @@ h3.study-title {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    
+    /* backdrop-filter: blur(10px); */
 }
+
 
 .image-container {
     display: flex;
@@ -39,9 +94,6 @@ h3.study-title {
 }
 
 #aboutMe>h2 {
-    /* width: 60%; */
-    /* display: flex; */
-    /* justify-self: start; */
     color: var(--yellow);
     font-weight: 500;
     font-size: 60px;
@@ -170,16 +222,25 @@ h3.study-title {
 
 /* /////////////////////////////////////////////// */
 
-.projects {
+#projects {
     text-decoration: none;
-
+    width: 100%;
 }
 
-.projects>.row>.card.col {
+#projects>.row>.card.col {
     margin: 40px 10px 0 10px;
     max-height: 500px;
     box-sizing: border-box;
-    /* border: 3px solid black; */
+    box-shadow: rgba(14, 14, 14, 0.992) 5px 5px 20px 2px;
+}
+
+#projects>h2 {
+    font-family: 'Quicksand';
+    color: var(--yellow);
+    font-size: 60px;
+    font-weight: 500;
+    margin:auto;
+    text-align: center;
 }
 
 .project-container {
@@ -187,29 +248,47 @@ h3.study-title {
 }
 
 .card {
-    max-height: auto !important;
+    height: 500px;
+    /* max-height: auto !important; */
     color: var(--darkBlue);
     border-color: #03768f;
-    margin-top: 0 !important;
+    transition: 300ms ease;
+}
 
+.card:hover {
+    transform: scale(1.03);
+    cursor: pointer;
 }
 
 .card-img {
     margin: 0;
+    height: 200px;
+    display: flex;
 }
 
 
 .card-img-top {
-    display: flex;
-    /* width: 100px; */
+    align-self:center;
     margin: auto;
+    height:auto;
 }
 
+.card-title{
+    height: 65px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+.card-body p{
+    height:95px;
+}
 
 /* ////////////////////////////////////////////////////////////// */
 /* ########################## responsive ######################## */
 /* ////////////////////////////////////////////////////////////// */
 @media (max-width:576px) {
+
+
     p {
         font-size: .8rem;
         line-height: 1rem;
@@ -221,7 +300,11 @@ h3.study-title {
 
 
     }
-
+    #deco_img {
+        margin: auto;
+        width:300px;
+        opacity: .5;
+    }
     #aboutMe>.text {
         margin-top: 2rem;
         height: auto;
@@ -238,7 +321,33 @@ h3.study-title {
         display: block;
     }
 
-
+    .project {
+        box-sizing: border-box;
+        display: block;
+        max-height: 600px;
+    }
+    .project .info-section {
+        margin: 1rem 0 0 0;
+    }
+    .project .info-section .project-description{ 
+        line-height: 2rem;
+    }
+    .project-title {
+        font-size: 2.5rem;
+        line-height: 3.5rem;
+        text-align: left !important;
+    }
+    
+    .project:nth-child img {
+        order:1;
+    }
+    .project img {
+        margin:auto !important;
+        display: flex;
+        justify-self:center;        
+        width:70%;
+    }
+    
 
     .description {
         margin-bottom: 1rem;
@@ -272,7 +381,8 @@ h3.study-title {
         display: -ms-flexbox;
         align-self: center;
         align-self: baseline;
-        background-color: #03768f;
+        /* background-color: #03768f; */
+        backdrop-filter: none !important;
         max-width: 100%;
         width: 100% !important;
         line-height: 3.7mm;
@@ -282,13 +392,22 @@ h3.study-title {
         margin-right: auto !important;
     }
 
+    .desc_text {
+        backdrop-filter: none !important;
+        background-color: none !important;
+    }
 
     .desc_text>p {
+        
+        font-size:1.5rem;
+        line-height: 2rem;
         /* max-width: 100%; */
         color: #f2f2f2;
 
     }
+    .description {
 
+    }
 
     .studies {
         padding: auto 0;
