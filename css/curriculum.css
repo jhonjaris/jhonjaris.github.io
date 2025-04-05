@@ -146,10 +146,11 @@ body {
 }
 
 .tech_icon img {
-    width: 50px;
+    width: auto;
     height: 50px;
+    max-height: 50px; /* Limita la altura máxima */
     margin-bottom: 1rem;
-    object-fit: contain; /* Asegura que las imágenes no se deformen */
+    object-fit: contain;
 }
 
 .tech_title {
@@ -292,34 +293,6 @@ body {
     border-radius: 50%;
 }
 
-.exp {
-    position: relative;
-    padding-left: 2rem;
-    border-left: 2px solid var(--color-accent);
-    margin-bottom: 2rem;
-}
-
-.exp::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background: var(--color-accent);
-    border-radius: 50%;
-}
-
-.exp h3 {
-    font-size: 1.5rem;
-    color: var(--color-main);
-}
-
-.exp p {
-    font-size: 1rem;
-    color: var(--color-text);
-}
-
 .download_cv {
     text-align: center;
     padding: 2rem;
@@ -369,7 +342,7 @@ body {
     font-family: var(--font-heading);
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 
 .lang-btn:hover {
@@ -381,6 +354,7 @@ body {
     background-color: var(--color-accent);
     color: var(--color-main-dark);
     font-weight: bold;
+    transform: scale(1.1); /* Slightly larger to emphasize the active button */
 }
 
 footer {

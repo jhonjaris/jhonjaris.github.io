@@ -104,6 +104,11 @@ function setLanguage(lang) {
         const key = el.getAttribute("data-i18n");
         el.textContent = translations[lang][key];
     });
+
+    // Update active language button
+    document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active-lang"));
+    document.getElementById(`switch-to-${lang}`).classList.add("active-lang");
+
     localStorage.setItem("language", lang);
 }
 
