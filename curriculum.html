@@ -86,7 +86,7 @@
         </div>
         <div class="tech">
             <div class="tech_icon">
-                <img src="assets/img/git.svg" alt="Git">
+                <img src="assets/img/Git.svg" alt="Git">
             </div>
             <div class="tech_desc">
                 <h3 class="tech_title">Git</h3>
@@ -94,7 +94,7 @@
         </div>
         <div class="tech">
             <div class="tech_icon">
-                <img src="assets/img/laravel.svg" alt="Laravel">
+                <img src="assets/img/Laravel.svg" alt="Laravel">
             </div>
             <div class="tech_desc">
                 <h3 class="tech_title">Laravel</h3>
@@ -118,10 +118,18 @@
         </div>
         <div class="tech">
             <div class="tech_icon">
-                <img src="assets/img/tailwind.svg" alt="Tailwind CSS">
+                <img src="assets/img/Tailwind.svg" alt="Tailwind CSS">
             </div>
             <div class="tech_desc">
                 <h3 class="tech_title">Tailwind CSS</h3>
+            </div>
+        </div>
+        <div class="tech">
+            <div class="tech_icon">
+                <img src="assets/img/excel-logo-0.png" alt="Excel">
+            </div>
+            <div class="tech_desc">
+                <h3 class="tech_title">Excel</h3>
             </div>
         </div>
     </section>
@@ -130,7 +138,6 @@
     <section class="extras">
         <h3 class="title">Extras</h3>
         <div class="extras_container">
-
             <div class="extra">
                 <span class="icon">
                     <img src="assets/img/acdl.png" alt="logo de la academia de lenguas de santo domingo">
@@ -152,12 +159,71 @@
                 <h3>Oratoria</h3>
                 <div class="bar"><div class="progress adv"></div></div>
             </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/ubuntu.png" alt="Linux (Ubuntu)">
+                </span>
+                <h3>Linux (Ubuntu)</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-photoshop.png" alt="Adobe Photoshop">
+                </span>
+                <h3>Adobe Photoshop</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-illustrator.png" alt="Adobe Illustrator">
+                </span>
+                <h3>Adobe Illustrator</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-xd.png" alt="Adobe XD">
+                </span>
+                <h3>Adobe XD</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/excel-logo-0.png" alt="Excel">
+                </span>
+                <h3>Excel</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="extras">
+        <h3 class="title">Educación</h3>
+        <div class="extras_container">
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/FreeCodeCamp_logo.svg.png" alt="FreeCodeCamp">
+                </span>
+                <h3>Desarrollo Web Responsive</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/unibe-logo.png" alt="Unibe Logo">
+                </span>
+                <h3>Ingeniería en Tecnología y Comunicaciones</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/itla-logo.webp" alt="ITLA">
+                </span>
+                <h3>Desarrollo de Software</h3>
+            </div>
         </div>
     </section>
 
     <section class="experiences">
         <h3 class="title"> Experiencia Laboral </h3>
         <div class="timeline">
+            <div class="timeline_item">
+                <h3>Skillfull Antics</h3>
+                <p>Web Developer</p>
+                <p>2022-ACTUALIDAD</p>
+            </div>
             <div class="timeline_item">
                 <h3>BancaDom S.R.L.</h3>
                 <p>2019-2021</p>
@@ -174,7 +240,7 @@
     </section>
     <section>
         <div class="download_cv">
-            <a href="assets/files/curriculum_2022 copy.pdf" target="_blank">
+            <a href="assets/files/Curriculum Jhonjaris Soto - F.pdf" target="_blank">
                 <button class="download_pdf">
                     <img src="assets/icons/download.svg" alt="Download Icon"> Descargar PDF
                 </button>
@@ -184,18 +250,32 @@
                     <img src="assets/icons/view.svg" alt="View Icon"> Ver imagen
                 </button>
             </a>
+            <a href="assets/img/Copy of Curriculum Jhonjaris Soto - F.pdf.png" target="_blank">
+                <button class="download_pdf">
+                    <img src="assets/icons/view.svg" alt="View Icon"> Download (ENGLISH)
+                </button>
+            </a>
         </div>
     </section>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        const techContainer = document.getElementById('tech-container');
-        const showMoreLink = document.getElementById('show-more-tech');
 
-        showMoreLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            techContainer.classList.toggle('expanded');
-            showMoreLink.textContent = techContainer.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
-        });
+    <footer class="container-fluid d-flex justify-content-around align-content-center">
+        <div class="copyright d-flex text-center align-content-center h-100">
+            <p>© Jhonjaris Soto - 2020, Todos los derechos reservados.</p>
+        </div>
+        <div class="d-flex justify-content-start align-content-center my-3">
+            <ul>
+                <li><b>Contacto</b></li>
+                <li><a href="./contact.html">Página Web</a></li>
+                <li><a href="tel:+16606754804">+1 660 675 4804</a></li>
+                <li><a href="mailto:imjhon.dev@gmail.com">imjhon.dev@gmail.com</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/curriculum.js"></script>
+    <script>
+
     </script>
 </body>
 </html>
