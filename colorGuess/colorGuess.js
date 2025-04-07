@@ -27,22 +27,30 @@ function checkGameOver() {
 }
 
 function youWon(winnerBox) {
+    // Change all squares to the winner's color with animation
     boxes.forEach(function (element) {
         element.style.backgroundColor = winnerBox.getAttribute("color");
+        element.style.display = "block"; // Ensure all boxes are visible
+        element.classList.add("box-win-animation"); // Add animation class
     });
     header.style.backgroundColor = winnerBox.getAttribute("color");
-    alert("Congratulations! You won!");
-    restartGame();
+    setTimeout(() => {
+        alert("Congratulations! You won!");
+        restartGame();
+    }, 3000); // Delay popup to allow animation to play
 }
 
 function loadColors() {
-    // Adjust the number of boxes based on difficulty
-    let totalBoxes = dificulty === 4 ? 16 : dificulty * 3;
+    // Here we limit the availability to those boxes which are visible
+    // (dificulty = number of lines visible) * 3 ( = boxes per line) - 1 (because start from zero)
     let boxes = document.querySelectorAll(".box");
-    randomIndex = Math.round(Math.random() * (totalBoxes - 1));
+    randomIndex = Math.round(Math.random() * (dificulty * 3 - 1));
 
+    // here we asign a color randonmly obtained to each box "visible" in the array
     boxes.forEach(function (element, index) {
-        if (index < totalBoxes) {
+        console.log(element);
+        if (index < dificulty * 3) {
+
             element.style.display = "block";
             let r = Math.round(Math.random() * 255);
             let g = Math.round(Math.random() * 255);
@@ -50,14 +58,12 @@ function loadColors() {
             let rgb = `rgb(${r}, ${g}, ${b})`;
 
             element.style.backgroundColor = rgb;
-            element.setAttribute("color", rgb);
+            element.setAttribute("color", rgb)
 
-            colors[index] = rgb;
-        } else {
-            element.style.display = "none";
+            colors[index] = `rgb(${r}, ${g}, ${b})`;
         }
-    });
-
+    })
+    // here we assign a random value taken from one of our boxes to the winnerColor
     winnerColor = colors[randomIndex];
     colorGuess.textContent = winnerColor.toUpperCase();
 }
@@ -112,19 +118,8 @@ function setDifficulty() {
                     lines[0].style.display = "flex";
                     lines[1].style.display = "flex";
                     lines[2].style.display = "flex";
-                    // Add a fourth line dynamically for 4x4 grid
-                    if (!document.querySelector("#line4")) {
-                        const line4 = document.createElement("div");
-                        line4.classList.add("line");
-                        line4.id = "line4";
-                        for (let i = 0; i < 4; i++) {
-                            const box = document.createElement("div");
-                            box.classList.add("box");
-                            line4.appendChild(box);
-                        }
-                        document.querySelector(".box-container").appendChild(line4);
-                    }
-                    document.querySelector("#line4").style.display = "flex";
+                    lines[3].style.display = "flex";
+                    
                     break;
             }
 
@@ -136,19 +131,20 @@ function setDifficulty() {
 }
 
 function setBoxesListener() {
-    // to hide a box when is clicked but not the winnerBox
+    // to hide a box when it is clicked but not the winnerBox
     boxes.forEach(function (element) {
         element.addEventListener("click", function () {
             if (this.getAttribute("color") === winnerColor) {
                 youWon(this);
             } else {
                 this.style.display = "none";
+                this.classList.add("box-wrong-animation"); // Add wrong box animation
                 attempts++;
                 updateAttempts();
                 checkGameOver();
             }
-        })
-    })
+        });
+    });
 }
 
 function restartGame() {

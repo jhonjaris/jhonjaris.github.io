@@ -110,6 +110,42 @@ body{
     background-color: #3d8da4;
 }
 
+/* animations for box clicks */
+@keyframes boxWin {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes boxWrong {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+}
+
+.box-win-animation {
+    animation: boxWin 0.5s ease-in-out;
+}
+
+.box-wrong-animation {
+    animation: boxWrong 0.5s ease-in-out;
+}
+
 @media(max-width: 580px){
     .box{
         width: 8rem;
