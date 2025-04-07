@@ -12,6 +12,7 @@ body{
     background-color: #90afda;
     padding: 30px;
     color:white;
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
 }
 #topless{
     margin-block-start: 0px;
@@ -48,10 +49,18 @@ body{
 .active{
     background-color:#F0F7F9 !important;
 }
+
+#attemptsDisplay {
+    font-size: 1rem;
+    color: #333;
+    margin-left: 10px;
+}
+
 /* box-container elements */
 .line{
-    justify-content: center;
     display: flex;
+    justify-content: center;
+    gap: 10px; /* Add spacing between boxes */
     width: 100vw;
 }
 
@@ -59,12 +68,21 @@ body{
     display: none;
 }
 
+#line4 {
+    display: none;
+    justify-content: center;
+    width: 100vw;
+}
+
 .box-container{
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for 4x4 grid */
+    justify-content: center;
+    gap: 10px;
     background:#F0F7F9;
-    justify-content: space-around ;
-    display: block;
     text-align: center;
 }
+
 .box{
     width: 10rem;
     height: 10rem;
@@ -75,8 +93,22 @@ body{
     cursor: pointer;
 }
 
+#restartGame {
+    padding: 10px 20px;
+    margin: 10px auto;
+    display: block;
+    background-color: #5bacc2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-
+#restartGame:hover {
+    background-color: #3d8da4;
+}
 
 @media(max-width: 580px){
     .box{
