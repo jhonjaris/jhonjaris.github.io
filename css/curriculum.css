@@ -25,6 +25,10 @@ body {
     text-align: center; /* Centraliza el contenido */
 }
 
+a {
+    text-decoration: none;
+}
+
 .navbar {
     background: var(--color-main);
     padding: 1rem;
@@ -62,6 +66,32 @@ body {
 
 .navbar-nav .nav-link:hover {
     color: var(--color-accent);
+}
+
+.action_buttons {
+    display: flex;
+    flex-direction: column;  /* Changed to column layout */
+    align-items: center;     /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    gap: 1rem;
+    margin: 2rem auto;      /* Added auto margins for horizontal centering */
+    max-width: 300px;       /* Added max-width for better readability */
+    width: 100%;
+}
+
+.action_buttons > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: var(--color-accent);
+    color: var(--color-text);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .profile_image_container {
