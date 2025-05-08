@@ -23,7 +23,7 @@
     --color-white: #f6fdf7; /* White color variable */
     --color-secondary: #5b2a86; /* Secondary purple color for variety */
     --color-muted: #f8f9fa; /* Muted background for alternate sections */
-    --color-overlay: rgba(0, 0, 0, 0.5); /* Overlay for hover effects */
+   /** --color-overlay: rgba(0, 0, 0, 0.5); /* Overlay for hover effects */
 }
 
 body {
