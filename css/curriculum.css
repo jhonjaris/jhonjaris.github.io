@@ -176,15 +176,29 @@ a {
 }
 
 .tech_icon img {
-    width: 50px;
+    width: auto;
     height: 50px;
+    max-height: 50px; /* Limita la altura máxima */
     margin-bottom: 1rem;
-    object-fit: contain; /* Asegura que las imágenes no se deformen */
+    object-fit: contain;
 }
 
 .tech_title {
     font-size: 1.2rem;
     color: var(--color-main);
+}
+
+.uniform-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.rectangular-image {
+    width: auto;
+    height: 80px;
+    object-fit: contain;
 }
 
 .show-more-link {
@@ -196,6 +210,8 @@ a {
     text-decoration: none;
     margin-top: 1rem;
     transition: color 0.3s ease;
+    visibility: visible; /* Ensure the button is visible */
+    opacity: 1; /* Ensure full opacity */
 }
 
 .show-more-link:hover {
@@ -307,34 +323,6 @@ a {
     border-radius: 50%;
 }
 
-.exp {
-    position: relative;
-    padding-left: 2rem;
-    border-left: 2px solid var(--color-accent);
-    margin-bottom: 2rem;
-}
-
-.exp::before {
-    content: '';
-    position: absolute;
-    left: -8px;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background: var(--color-accent);
-    border-radius: 50%;
-}
-
-.exp h3 {
-    font-size: 1.5rem;
-    color: var(--color-main);
-}
-
-.exp p {
-    font-size: 1rem;
-    color: var(--color-text);
-}
-
 .download_cv {
     text-align: center;
     padding: 2rem;
@@ -361,6 +349,63 @@ a {
     background: var(--color-main);
     color: var(--color-light-text);
     transform: scale(1.05);
+}
+
+.language-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.lang-btn {
+    background-color: var(--color-main);
+    color: var(--color-light-text);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.lang-btn:hover {
+    background-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.lang-btn.active-lang {
+    background-color: var(--color-accent);
+    color: var(--color-main-dark);
+    font-weight: bold;
+    transform: scale(1.1); /* Slightly larger to emphasize the active button */
+}
+
+footer {
+    background: var(--color-main);
+    color: var(--color-light-text);
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 1rem;
+    border-top: 3px solid var(--color-accent);
+}
+
+footer .footer-link {
+    color: var(--color-light-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer .footer-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
 }
 
 /* Responsividad */

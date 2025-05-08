@@ -33,13 +33,18 @@
         </div>
     </nav>
 
+    <div class="language-switcher">
+        <button id="switch-to-en" class="lang-btn active-lang">EN</button>
+        <button id="switch-to-es" class="lang-btn">ES</button>
+    </div>
+
     <section class="profile_image_container">
         <div class="profile_image_wrapper">
             <img src="assets/img/digital.jpg" alt="Foto de Jhonjaris Soto" class="cv_image">
         </div>
-        <h3>Jhonjaris Soto</h3>
+        <h3 data-i18n="profile-name">Jhonjaris Soto</h3>
         <div class="profile_separator"></div>
-        <h5>Desarrollador de Software</h5>
+        <h5 data-i18n="profile-title">Desarrollador de Software</h5>
     </section>
 
     <section class="tech_container" id="tech-container">
@@ -48,7 +53,7 @@
                 <img src="assets/img/html.png" alt="HTML5">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">HTML5</h3>
+                <h3 class="tech_title" data-i18n="tech-title-html">HTML5</h3>
             </div>
         </div>
         <div class="tech">
@@ -56,7 +61,7 @@
                 <img src="assets/img/css.png" alt="CSS3">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">CSS3</h3>
+                <h3 class="tech_title" data-i18n="tech-title-css">CSS3</h3>
             </div>
         </div>
         <div class="tech">
@@ -64,7 +69,7 @@
                 <img src="assets/img/js.png" alt="JavaScript">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">JavaScript</h3>
+                <h3 class="tech_title" data-i18n="tech-title-js">JavaScript</h3>
             </div>
         </div>
         <div class="tech">
@@ -72,7 +77,7 @@
                 <img src="assets/img/php.png" alt="PHP7">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">PHP7</h3>
+                <h3 class="tech_title" data-i18n="tech-title-php">PHP7</h3>
             </div>
         </div>
         <div class="tech">
@@ -80,23 +85,23 @@
                 <img src="assets/img/mysql.png" alt="MySQL">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">MySQL</h3>
+                <h3 class="tech_title" data-i18n="tech-title-mysql">MySQL</h3>
             </div>
         </div>
         <div class="tech">
             <div class="tech_icon">
-                <img src="assets/img/git.svg" alt="Git">
+                <img src="assets/img/Git.svg" alt="Git">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">Git</h3>
+                <h3 class="tech_title" data-i18n="tech-title-git">Git</h3>
             </div>
         </div>
         <div class="tech">
             <div class="tech_icon">
-                <img src="assets/img/laravel.svg" alt="Laravel">
+                <img src="assets/img/Laravel.svg" alt="Laravel">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">Laravel</h3>
+                <h3 class="tech_title" data-i18n="tech-title-laravel">Laravel</h3>
             </div>
         </div>
         <div class="tech">
@@ -104,7 +109,7 @@
                 <img src="assets/img/bootstrap.png" alt="Bootstrap">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">Bootstrap</h3>
+                <h3 class="tech_title" data-i18n="tech-title-bootstrap">Bootstrap</h3>
             </div>
         </div>
         <div class="tech">
@@ -112,91 +117,184 @@
                 <img src="assets/img/jquery.png" alt="jQuery">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">jQuery</h3>
+                <h3 class="tech_title" data-i18n="tech-title-jquery">jQuery</h3>
             </div>
         </div>
         <div class="tech">
             <div class="tech_icon">
-                <img src="assets/img/tailwind.svg" alt="Tailwind CSS">
+                <img src="assets/img/Tailwind.svg" alt="Tailwind CSS">
             </div>
             <div class="tech_desc">
-                <h3 class="tech_title">Tailwind CSS</h3>
+                <h3 class="tech_title" data-i18n="tech-title-tailwind">Tailwind CSS</h3>
+            </div>
+        </div>
+        <div class="tech">
+            <div class="tech_icon">
+                <img src="assets/img/excel-logo-0.png" alt="Excel">
+            </div>
+            <div class="tech_desc">
+                <h3 class="tech_title" data-i18n="tech-title-excel">Excel</h3>
             </div>
         </div>
     </section>
-    <a href="#" id="show-more-tech" class="show-more-link">Ver más</a>
+    <a href="#" id="show-more-tech" class="show-more-link" data-i18n="buttons-show-more">Ver más</a>
 
     <section class="extras">
-        <h3 class="title">Extras</h3>
+        <h3 class="title" data-i18n="extras-title">Extras</h3>
         <div class="extras_container">
-
             <div class="extra">
                 <span class="icon">
                     <img src="assets/img/acdl.png" alt="logo de la academia de lenguas de santo domingo">
                 </span>
-                <h3>Inglés</h3>
+                <h3 data-i18n="extra-english">Inglés</h3>
                 <div class="bar"><div class="progress adv"></div></div>
             </div>
             <div class="extra">
                 <span class="icon">
                     <img src="assets/img/centu.png" alt="logo centu">
                 </span>
-                <h3>Adobe Ps / Ai / Xd</h3>
+                <h3 data-i18n="extra-adobe">Adobe Ps / Ai / Xd</h3>
                 <div class="bar"> <div class="progress im"></div></div>
             </div>
             <div class="extra">
                 <span class="icon">
                     <img src="assets/img/vozzit.png" alt="Logo Vozzit">
                 </span>
-                <h3>Oratoria</h3>
+                <h3 data-i18n="extra-public-speaking">Oratoria</h3>
                 <div class="bar"><div class="progress adv"></div></div>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img class="rectangular-image" src="assets/img/ubuntu.png" alt="Linux (Ubuntu)">
+                </span>
+                <h3 data-i18n="extra-linux">Linux (Ubuntu)</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-photoshop.png" alt="Adobe Photoshop">
+                </span>
+                <h3 data-i18n="extra-photoshop">Adobe Photoshop</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-illustrator.png" alt="Adobe Illustrator">
+                </span>
+                <h3 data-i18n="extra-illustrator">Adobe Illustrator</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img src="assets/img/adobe-xd.png" alt="Adobe XD">
+                </span>
+                <h3 data-i18n="extra-xd">Adobe XD</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="extras">
+        <h3 class="title" data-i18n="education-title">Educación</h3>
+        <div class="extras_container">
+            <div class="extra">
+                <span class="icon">
+                    <img class="rectangular-image" src="assets/img/FreeCodeCamp_logo.svg.png" alt="FreeCodeCamp">
+                </span>
+                <h3 data-i18n="education-item-1">Desarrollo Web Responsive</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img class="rectangular-image" src="assets/img/unibe-logo.png" alt="Unibe Logo">
+                </span>
+                <h3 data-i18n="education-item-2">Ingeniería en Tecnología y Comunicaciones</h3>
+            </div>
+            <div class="extra">
+                <span class="icon">
+                    <img class="rectangular-image" src="assets/img/itla-logo.webp" alt="ITLA">
+                </span>
+                <h3 data-i18n="education-item-3">Desarrollo de Software</h3>
             </div>
         </div>
     </section>
 
     <section class="experiences">
-        <h3 class="title"> Experiencia Laboral </h3>
+        <h3 class="title" data-i18n="experience-title"> Experiencia Laboral </h3>
         <div class="timeline">
             <div class="timeline_item">
-                <h3>BancaDom S.R.L.</h3>
-                <p>2019-2021</p>
+                <h3 data-i18n="experience-item-4-company">Autoridad Portuaria Dominicana</h3>
+                <p data-i18n="experience-item-4-role">Analista de Software</p>
+                <p data-i18n="experience-item-4-period">Presente</p>
+                <h3 data-i18n="experience-item-1-company">Skillfull Antics</h3>
+                <p data-i18n="experience-item-1-role">Desarrollador Web</p>
+                <p data-i18n="experience-item-1-period">2022-Presente</p>
             </div>
             <div class="timeline_item">
-                <h3>MediaSoft S.R.L.</h3>
-                <p>2019-2021</p>
+                <h3 data-i18n="experience-item-2-company">BancaDom S.R.L.</h3>
+                <p data-i18n="experience-item-2-role">Soporte Técnico</p>
+                <p data-i18n="experience-item-2-period">2019-2021</p>
             </div>
             <div class="timeline_item">
-                <h3>Edificio de Oficinas Gubernamentales Juan Pablo Duarte</h3>
-                <p>2021-2022</p>
+                <h3 data-i18n="experience-item-3-company">MediaSoft S.R.L.</h3>
+                <p data-i18n="experience-item-3-role">Desarrollador de Software</p>
+                <p data-i18n="experience-item-3-period">2019-2021</p>
             </div>
+
         </div>
     </section>
     <section class="action_buttons">
         <div class="download_cv">
-            <a href="assets/files/curriculum_2022 copy.pdf" target="_blank">
-                <button class="download_pdf">
-                    <!-- <img src="assets/icons/download.svg" alt="Download Icon"> -->
-                    <i class="fa-solid fa-download"></i> Descargar PDF
+
+            <a href="assets/files/Curriculum Jhonjaris Soto - F.pdf" target="_blank">
+                <button class="download_pdf" data-i18n="download-pdf">
+                    <img src="assets/icons/download.svg" alt="Download Icon"> Descargar PDF
                 </button>
             </a>
             <a href="assets/img/curriculum-software-developer-2022.jpg" target="_blank">
-                <button class="download_img">
-                    <!-- <img src="assets/icons/view.svg" alt="View Icon"> -->
-                    <i class="fa-solid fa-eye"></i> Ver imagen
+                <button class="download_img" data-i18n="download-image">
+                    <img src="assets/icons/view.svg" alt="View Icon"> Ver imagen
+
+                </button>
+            </a>
+            <a href="assets/img/Copy of Curriculum Jhonjaris Soto - F.pdf.png" target="_blank">
+                <button class="download_pdf" data-i18n="download-english">
+                    <img src="assets/icons/view.svg" alt="View Icon"> Descargar (INGLÉS)
                 </button>
             </a>
         </div>
     </section>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        const techContainer = document.getElementById('tech-container');
-        const showMoreLink = document.getElementById('show-more-tech');
 
-        showMoreLink.addEventListener('click', function (e) {
-            e.preventDefault();
-            techContainer.classList.toggle('expanded');
-            showMoreLink.textContent = techContainer.classList.contains('expanded') ? 'Ver menos' : 'Ver más';
+    <footer class="container-fluid d-flex flex-column align-items-center justify-content-center py-4">
+        <p class="mb-2" data-i18n="footer">© 2025 Jhonjaris Soto. Todos los derechos reservados.</p>
+        <ul class="d-flex list-unstyled mb-0">
+            <li class="mx-3">
+                <a href="./contact.html" class="footer-link" data-i18n="footer-contact">Página Web</a>
+            </li>
+            
+            <li class="mx-3">
+                <a href="mailto:imjhon.dev@gmail.com" class="footer-link" data-i18n="footer-email">imjhon.dev@gmail.com</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/curriculum.js"></script>
+    <script>
+        // Ensure the language switch buttons work properly
+        const switchToEn = document.getElementById('switch-to-en');
+        const switchToEs = document.getElementById('switch-to-es');
+
+        switchToEn.addEventListener('click', () => {
+            loadCurriculumContent('en');
+            switchToEn.classList.add('active-lang');
+            switchToEs.classList.remove('active-lang');
         });
+
+        switchToEs.addEventListener('click', () => {
+            loadCurriculumContent('es');
+            switchToEs.classList.add('active-lang');
+            switchToEn.classList.remove('active-lang');
+        });
+
+        // Initialize the page with the default language
+        loadCurriculumContent('en');
     </script>
 </body>
 </html>
