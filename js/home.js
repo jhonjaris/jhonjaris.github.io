@@ -14,12 +14,17 @@ const translations = {
         "feature-item-seo": "SEO Optimization",
         "feature-item-seo-description": "Boost your online visibility and reach.",
         "portfolio-title": "My Work",
-        "portfolio-item-1-title": "Online Product Catalog (PHP/Laravel)",
-        "portfolio-item-1-description": "Virtual store with cart and authentication. (In development)",
-        "portfolio-item-2-title": "Loan Management System (C#/.NET)",
-        "portfolio-item-2-description": "Loan management system with admin dashboard. (In development)",
+        "portfolio-item-1-title": "Online Homework Manager (PHP)",
+        "portfolio-item-1-description": "Is a web application for managing tasks and notes for classes, built using PHP as the backend technology and a relational database with MySQL. It implements front-end technologies such as HTML, CSS, JavaScript, and jQuery, along with Bootstrap 4 as the front-end framework to ensure responsiveness and a seamless user experience.",
+        "portfolio-item-1-cta": "View Project",
+        "portfolio-item-2-title": "Loan Management System (PHP)",
+        "portfolio-item-2-description": "is a loan management platform built using PHP as the backend technology and a relational database with MySQL. It leverages standard web tools such as HTML, CSS, and JavaScript, along with Bootstrap 4 as the front-end framework. This combination ensures a responsive and user-friendly experience for managing loans efficiently.",
+        "portfolio-item-2-cta": "View Project",
         "portfolio-item-3-title": "Brick Game & Color Picker (JavaScript)",
         "portfolio-item-3-description": "Interactive games with DOM manipulation.",
+        "portfolio-item-3-cta": "View Project",
+        "portfolio-see-more": "See More",
+        "portfolio-see-less": "See Less",
         "contact-title": "Get in Touch",
         "contact-name-label": "Your Name",
         "contact-email-label": "Your Email",
@@ -42,12 +47,17 @@ const translations = {
         "feature-item-seo": "Optimización SEO",
         "feature-item-seo-description": "Impulsa tu visibilidad en línea y alcance.",
         "portfolio-title": "Mi Trabajo",
-        "portfolio-item-1-title": "Catálogo de Productos Online (PHP/Laravel)",
-        "portfolio-item-1-description": "Tienda virtual con carrito y autenticación. (En desarrollo)",
-        "portfolio-item-2-title": "Sistema de Préstamos (C#/.NET)",
-        "portfolio-item-2-description": "Gestión de préstamos con dashboard administrativo. (En desarrollo)",
+        "portfolio-item-1-title": "Manejador de Tareas en Línea (PHP)",
+        "portfolio-item-1-description": "Es una web app de gestión de tareas y notas para clases usando PHP para backend y base de datos relacional con MySQL, implementando las tecnologías de front-end HTML, CSS, JAVASCRIPT, JQUERY. También usando Bootstrap 4 como framework front-end.",
+        "portfolio-item-1-cta": "Ver Proyecto",
+        "portfolio-item-2-title": "Sistema Gestor de Préstamos Online (PHP)",
+        "portfolio-item-2-description": "es una plataforma de gestión de prestamos creada con PHP como tecnología de backend y base de datos relacional con MySQL, por medio de las herramientas estándar de la web como son HTML, CSS, JAVASCRIPT. También usando Bootstrap 4 como framework front-end.",
+        "portfolio-item-2-cta": "Ver Proyecto",
         "portfolio-item-3-title": "Brick Game & Color Picker (JavaScript)",
         "portfolio-item-3-description": "Juegos interactivos con manipulación del DOM.",
+        "portfolio-item-3-cta": "Ver Proyecto",
+        "portfolio-see-more": "Ver más",
+        "portfolio-see-less": "Ver menos",
         "contact-title": "Ponte en Contacto",
         "contact-name-label": "Tu Nombre",
         "contact-email-label": "Tu Correo Electrónico",
@@ -76,3 +86,16 @@ document.getElementById("lang-es").onclick = function () {
 // Load saved language preference
 const savedLang = localStorage.getItem("language") || "en";
 setLanguage(savedLang);
+
+// Add click handlers for see more/less buttons
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.see-more').forEach(link => {
+        link.addEventListener('click', function() {
+            const description = this.previousElementSibling;
+            const isExpanded = description.classList.toggle('expanded');
+            const key = isExpanded ? 'portfolio-see-less' : 'portfolio-see-more';
+            this.setAttribute('data-i18n', key);
+            this.textContent = translations[localStorage.getItem('language') || 'en'][key];
+        });
+    });
+});
