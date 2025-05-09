@@ -30,7 +30,7 @@ const translations = {
         "contact-email-label": "Your Email",
         "contact-message-label": "Your Message",
         "contact-submit": "Send Message",
-        "footer": "© 2025 Your Name. All Rights Reserved."
+        "footer": "© 2025 Jhonjaris Soto. All Rights Reserved."
     },
     es: {
         "hero-title": "Bienvenido a Mi Portafolio",
@@ -63,7 +63,7 @@ const translations = {
         "contact-email-label": "Tu Correo Electrónico",
         "contact-message-label": "Tu Mensaje",
         "contact-submit": "Enviar Mensaje",
-        "footer": "© 2025 Tu Nombre. Todos los derechos reservados."
+        "footer": "© 2025 Jhonjaris Soto. Todos los derechos reservados."
     }
 };
 
