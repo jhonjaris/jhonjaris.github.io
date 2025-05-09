@@ -74,12 +74,13 @@ a {
 }
 
 .action_buttons {
+    padding: 2rem;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;  /* Changed to column layout */
     align-items: center;     /* Center items horizontally */
     justify-content: center; /* Center items vertically */
     gap: 1rem;
-    margin: 2rem auto;      /* Added auto margins for horizontal centering */
     max-width: 300px;       /* Added max-width for better readability */
     width: 100%;
 }
@@ -341,13 +342,24 @@ a {
 }
 
 .download_cv {
-    text-align: center;
-    padding: 2rem;
-    background: var(--color-muted);
-    justify-content: center; /* Centraliza los botones de descarga */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+}
+
+.download_cv a {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
 }
 
 .download_cv button {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -360,6 +372,7 @@ a {
     border-radius: 50px;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
+    white-space: nowrap;
 }
 
 .download_cv button:hover {
@@ -469,9 +482,17 @@ footer .footer-link:hover {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el diseño de la cuadrícula */
     }
 
+    .download_cv {
+        gap: 0.8rem;
+    }
+    
+    .download_cv a {
+        min-width: 180px;
+    }
+    
     .download_cv button {
-        font-size: 0.9rem; /* Reduce el tamaño del texto en los botones */
-        padding: 0.6rem 1rem;
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
     }
 
     .timeline {
@@ -524,6 +545,15 @@ footer .footer-link:hover {
 
     .extras_container {
         grid-template-columns: 1fr; /* Una columna para extras */
+    }
+
+    .download_cv {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .download_cv a {
+        max-width: 100%;
     }
 
     .download_cv button {
