@@ -1,6 +1,7 @@
-# engine/credentials.php
-# vendor
+
 node_modules
 ./node_modules
-# ./js/config.js
-.js/config.local.js
+js/config.local.js
+.env
+.DS_Store
+npm-debug.log
